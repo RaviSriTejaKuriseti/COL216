@@ -9,11 +9,15 @@ Core::Core(int n,string fname){
     readFile(fname);
     setRegs();
     setInstruct();
+    initCache(2);
 }
 
 void Core::setNum(int n){
     this->corenum=n;
 }
+ void Core::initCache(int qsize){
+    FixSizeQueue Q(qsize);
+ }
 
 void Core::readFile(string s){
     vector<pair<string,int>>indices;
@@ -22,6 +26,7 @@ void Core::readFile(string s){
     this->indices=indices;
     this->commands=filecontent;
     this->fwcommand=P1;
+    this->totcomm=filecontent.size();
 }
 
 void Core::setInstruct(){
@@ -186,6 +191,8 @@ int Core::jump(string label){
     }
     return -1;
 }
+
+ 
 
 
 

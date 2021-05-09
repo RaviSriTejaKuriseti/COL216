@@ -116,3 +116,41 @@ bool icommandlimit(string S){
     string intmax="32767";
     return checkinrange(S,intmin,intmax);
 }
+
+int commandtype (vector<string> &cmnd){
+    set<string>Tcomm{"addi","add","sub","mul","slt"};
+    set<string>Jcomm{"j","bne","beq"};
+    set<string>Mcomm{"lw","sw"};
+    bool b1=(Tcomm.find(cmnd[0])!=Tcomm.end());
+    if(b1){
+        return 1;    
+    }
+    else{
+        bool b2=(Jcomm.find(cmnd[0])!=Jcomm.end());
+        if(b2){
+            return 2;
+        }
+        else{
+            bool b3=(Mcomm.find(cmnd[0])!=Mcomm.end());
+            if(b3){
+                return 3;
+            }
+            else{
+                int x=(cmnd[0].length())-1;
+                if(cmnd.size()==1 && cmnd[0][x]==':'){
+                    return 4;
+
+                }
+                else{
+                    return -1;
+                }
+
+            }
+
+        }
+       
+    }
+}
+    
+
+

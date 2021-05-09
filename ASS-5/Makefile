@@ -11,7 +11,7 @@ default:begin
 
 begin:core.o finitequeue.o Memory.o main.o 
 	$(CXX) -o $(EXEC) $(OBJS)
-core.o : core.cpp core.h auxiliary.h Memory.h
+core.o : core.cpp core.h auxiliary.h Memory.h finitequeue.h
 	$(CXX) $(CXXFLAGS) core.cpp
 finitequeue.o: finitequeue.cpp finitequeue.h
 	$(CXX) $(CXXFLAGS) finitequeue.cpp

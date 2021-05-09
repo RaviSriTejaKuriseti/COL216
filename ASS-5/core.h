@@ -10,12 +10,16 @@
 #include <string>
 #include <list>
 #include <iterator>
+#include "finitequeue.h"
 using namespace std;
 
 
 class Core{
     public:
         int corenum;
+        int totcomm;
+        FixSizeQueue CACHE(int qsize);
+        void initCache(int qsize);
         pair<int,string>fwcommand;  //firstwrongcommand line number and corresponding string
         vector<vector<string>>commands;   //File converted into commands
         vector<pair<string,int>>indices; //Indices for jump or branch labels
@@ -36,6 +40,7 @@ class Core{
         int jump(string s);
         pair<string,int> executeTCommands(vector<string> &cmnd);
         pair<string,int> executeJCommands(vector<string> &cmnd);
+
         //pair<string,int> executeMcommands(vector<string> &cmnd,Memory *M);
 
 };

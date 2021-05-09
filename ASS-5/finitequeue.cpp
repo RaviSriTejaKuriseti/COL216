@@ -7,7 +7,7 @@
 
     
     void FixSizeQueue::initself(){
-        deque<pair<int,int>>D;
+        deque<vector<string>>D;
         this->self=D;
     }
 
@@ -29,11 +29,11 @@
         self.pop_front();
     }
 
-     void FixSizeQueue::Push(pair<int,int> &P){
+     void FixSizeQueue::Push(vector<string> &P){
         self.push_back(P);
     }
 
-    pair<int,int> FixSizeQueue::Top(){
+    vector<string> FixSizeQueue::Top(){
         auto it=self.begin();
         return *it;
     }

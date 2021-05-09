@@ -1,5 +1,9 @@
 #include <iostream>
 #include <deque>
+#include <algorithm>
+#include <iterator>
+#include <string>
+#include <vector>
 
 using namespace std;
 
@@ -8,12 +12,12 @@ using namespace std;
 class FixSizeQueue{
     public:
     int len;
-    deque<pair<int,int>>self;
+    deque<vector<string>>self;
     void initself();
     void initlen(int l);
-    void Push(pair<int,int> &P);
+    void Push(vector<string> &P);
     void Pop();
-    pair<int,int>Top();
+    vector<string>Top();
     FixSizeQueue(int size);
     bool isEmpty();
     bool isFull(); 
