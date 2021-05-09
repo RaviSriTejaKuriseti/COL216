@@ -9,13 +9,13 @@ Core::Core(int n,string fname){
     readFile(fname);
     setRegs();
     setInstruct();
-    initCache(2);
+    initSRAM(2);
 }
 
 void Core::setNum(int n){
     this->corenum=n;
 }
- void Core::initCache(int qsize){
+ void Core::initSRAM(int qsize){
     FixSizeQueue Q(qsize);
  }
 
