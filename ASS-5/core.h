@@ -18,8 +18,8 @@ class Core{
     public:
         int corenum;
         int totcomm;
-        FixSizeQueue CACHE(int qsize);
-        void initCache(int qsize);
+        FixSizeQueue SRAM(int qsize);
+        void initSRAM(int qsize);
         pair<int,string>fwcommand;  //firstwrongcommand line number and corresponding string
         vector<vector<string>>commands;   //File converted into commands
         vector<pair<string,int>>indices; //Indices for jump or branch labels
