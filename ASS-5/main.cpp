@@ -1,7 +1,4 @@
-#include "core.h"
-#include "Memory.h"
-#include "auxiliary.h"
-
+#include "helper.h"
 
 int main(){    
     string fn;
@@ -18,58 +15,121 @@ int main(){
     cout<<"Please Enter the COL_ACCESS_DELAY:";
     cin>>colaccess;
     vector<Core>Proc;
+    vector<FixSizeQueue>Cache;
     int maxcomm=0;
     for(int i=0;i<Cores;i++){
         cout<<"Please Enter the Filename:";
         cin>>fn;
+        //Core *c=new Core(i+1,fn);
         Core c=Core(i+1,fn);
+        FixSizeQueue f=FixSizeQueue(2);
         maxcomm=max(c.totcomm,maxcomm);
         Proc.push_back(c); 
-        cout<<c.corenum<<"\n";      
+        Cache.push_back(f);
+        //cout<<c->corenum<<"\n";      
     }
     Memory M=Memory(10,rowaccess,colaccess); //DRAM-SIZE=10
-    vector<bool>check(true,Cores);
-    for(int i=1;i<maxcomm-1;i++){
+    //vector<bool>check(Cores,true);
+    vector<int>nxtline(Cores,1);
+    int i=-1;
+    pair<string,int>PSI;
         int j=0;                        //1 for T 2 for J 3 for LW/SW 4 for labels
-        while(j<Cores){
-            if(check[j]=false){
+        while(true){
+            
+            if(j==Cores){
+                bool b1=iscomplete(nxtline);
+                if(b1){
+                    break;
+                }
+                else{
+                    j=0;
+                }
+            }
+            if(nxtline[j]==-1){
                 j+=1;
             }
             else{
-                 Core c=Proc[j];
-                 if(i<c.totcomm-1){
-                    vector<string>temp=c.commands[i];
-                    int ty=commandtype(temp);
-                    if(ty==1){
-                        c.executeTCommands(temp);
-                    }
-                    else if(ty==2){
-                        c.executeJCommands(temp);
-                    }
-                    else if(ty==-1){
-                        check[j]=false;
-                    }
-                    else if(ty==4){
-                        continue;
-                    }
-                    else{
-                        //c.
-
-
-                    }
-            
-               
-                
+                Core &c=Proc[j];
+                i=nxtline[j];
+                vector<vector<string>>TT=c.commands;
+                vector<string>temp=TT[i];
+                int ty=cmndtyp(temp);
+                if(ty==1){
+                    pair<string,int>PSI=executeTCommands(c,temp);
+                    nxtline[j]+=1;
+                    j+=1;
+                    //checklines[i][j]=true;
                 }
-                else{
+                else if(ty==2){
+                    PSI=executeJCommands(c,temp);
+                    nxtline[j]=PSI.second;
+                    j+=1;
+                    //checklines[i][j]=true;
+                    // map<int,int>M=c.indexmap;
+                    // int v1=PSI.second;
+                    // int v2=M[v1];
+                    // string lbl=(c.indices[v2]).first;
+                    // if(lbl=="exit:"){
+                    //     nxtline[j]=-1;
+                    // }
+                    // else{
+                    //     int u=v2+1;
+                    //     int u1=M[u];
+                        // for(int V=v1;V<u1;V++){
+                        //     checklines[V][j]=false;
+                        // }
+
+                    //}
+                    
+                }
+                else if(ty==-1){
+                    nxtline[j]=-1;
                     j+=1;
                 }
-           
+                else if(ty==4){
+                    nxtline[j]+=1;
+                    j+=1;
+                    //checklines[i][j]=true;
+                }
+                else if(ty==-2){
+                    printinst(c);
+                    printregcontents(c);
+                    nxtline[j]=-1;
+                    j+=1;
+                    
+                }
+                else if(ty==3){
+                    FixSizeQueue f=Cache[j];
+                    f.Push(temp);
+                    int k=nxtline[j]+1;
+                    while(k<c.totcomm){
+                        vector<string>temp1=(c.commands)[k];
+                        int ty2=cmndtyp(temp1);
+                        if(ty2==1){
+                            PSI=executeTCommands(c,temp1);
+                            k+=1;
+                        }
+                        else if(ty2==2){
+                            PSI=executeJCommands(c,temp);
+                            k=PSI.second;
+                        }
+                        else if(ty2==4){
+                            k+=1;
+                        }
+                        else{
+                            break;
+                        }
+                    }
+                    nxtline[j]=k;
+                    j+=1;
+                }
+                
 
+                }              
+    
         }
     
 
 
     }
 
-}

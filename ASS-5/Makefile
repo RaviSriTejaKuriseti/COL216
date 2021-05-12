@@ -9,15 +9,15 @@ RM=rm
 all:begin
 default:begin
 
-begin:core.o finitequeue.o Memory.o main.o 
+begin:finitequeue.o Memory.o core.o main.o 
 	$(CXX) -o $(EXEC) $(OBJS)
-core.o : core.cpp core.h auxiliary.h Memory.h finitequeue.h
-	$(CXX) $(CXXFLAGS) core.cpp
-finitequeue.o: finitequeue.cpp finitequeue.h
+finitequeue.o: 
 	$(CXX) $(CXXFLAGS) finitequeue.cpp
-Memory.o: Memory.cpp Memory.h finitequeue.o
+Memory.o: 
 	$(CXX) $(CXXFLAGS) Memory.cpp
-main.o: main.cpp core.o finitequeue.o Memory.o 
+core.o : 
+	$(CXX) $(CXXFLAGS) core.cpp
+main.o: 
 	$(CXX) $(CXXFLAGS) main.cpp
 
 run:
