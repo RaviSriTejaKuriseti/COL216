@@ -1,0 +1,231 @@
+Please Enter the NUMBER_OF_CORES:5
+Please Enter the Simulation_Cycles:100
+Please Enter the ROW_ACCESS_DELAY:10
+Please Enter the COL_ACCESS_DELAY:2
+Please Enter the Filename-1:-
+testcase0.txt
+Please Enter the Filename-2:-
+testcase1.txt
+Please Enter the Filename-3:-
+testcase2.txt
+Please Enter the Filename-4:-
+testcase3.txt
+Please Enter the Filename-5:-
+testcase4.txt
+CORE 1:-Cycle No:-0 MAIN
+CORE 2:-Cycle No:-0 MAIN
+CORE 3:-Cycle No:-0 MAIN
+CORE 4:-Cycle No:-0 MAIN
+CORE 5:-Cycle No:-0 MAIN
+CORE 1:-Cycle No:-1 $s0:1000
+CORE 2:-Cycle No:-1 $s0:1000
+CORE 3:-Cycle No:-1 $s0:5
+CORE 4:-Cycle No:-1 $t0:960
+CORE 5:-Cycle No:-1 DRAM-Request Issued
+CORE 1:-Cycle No:-2 $s1:2500
+CORE 2:-Cycle No:-2 $s1:0
+CORE 3:-Cycle No:-2 $s1:0
+CORE 5:-Cycle No:-2-13 $t1 0
+CORE 1:-Cycle No:-3 $t0:1
+CORE 2:-Cycle No:-3 $s2:10
+CORE 3:-Cycle No:-3 $s2:1
+CORE 3:-Cycle No:-4 $s3:1
+CORE 3:-Cycle No:-5 $s4:1
+CORE 3:-Cycle No:-6 LABEL NAME check
+CORE 3:-Cycle No:-7 $t0:0
+CORE 3:-Cycle No:-8 Branching to Label:-run
+CORE 3:-Cycle No:-9 LABEL NAME run
+CORE 3:-Cycle No:-10 $s1:5
+CORE 1:-Cycle No:-14 $t1:2
+CORE 2:-Cycle No:-14 $t1:0
+CORE 4:-Cycle No:-14 $t1:100
+CORE 1:-Cycle No:-15 $t2:3
+CORE 2:-Cycle No:-15 LABEL NAME initloop
+CORE 4:-Cycle No:-15 DRAM-Request Issued
+CORE 1:-Cycle No:-16 $t3:4
+CORE 2:-Cycle No:-16 $t1:1
+CORE 4:-Cycle No:-16 $t0:1920
+CORE 4:-Cycle No:-16-27 $s1 0
+CORE 1:-Cycle No:-17 DRAM-Request Issued
+CORE 2:-Cycle No:-17 DRAM-Request Issued
+CORE 4:-Cycle No:-17 $t1:200
+CORE 1:-Cycle No:-18 DRAM-Request Issued
+CORE 2:-Cycle No:-18 $s0:1004
+CORE 4:-Cycle No:-18 $t0:2880
+CORE 1:-Cycle No:-19 DRAM-Request Issued
+CORE 2:-Cycle No:-19 $s1:1
+CORE 4:-Cycle No:-19 $t1:300
+CORE 1:-Cycle No:-20 DRAM-Request Issued
+CORE 2:-Cycle No:-20 $s3:1
+CORE 1:-Cycle No:-21 DRAM-Request Issued
+CORE 2:-Cycle No:-21 Branching to Label:-initloop
+CORE 1:-Cycle No:-22 DRAM-Request Issued
+CORE 2:-Cycle No:-22 LABEL NAME initloop
+CORE 1:-Cycle No:-23 DRAM-Request Issued
+CORE 2:-Cycle No:-23 $t1:2
+CORE 1:-Cycle No:-24 DRAM-Request Issued
+CORE 2:-Cycle No:-24 DRAM IS FULL
+CORE 2:-Cycle No:-25 DRAM IS FULL
+CORE 2:-Cycle No:-26 DRAM IS FULL
+CORE 2:-Cycle No:-27 DRAM IS FULL
+CORE 2:-Cycle No:-28 DRAM-Request Issued
+CORE 1:-Cycle No:-28-39 1000-1003:1
+CORE 2:-Cycle No:-29 $s0:1008
+CORE 2:-Cycle No:-30 $s1:2
+CORE 2:-Cycle No:-31 $s3:1
+CORE 2:-Cycle No:-32 Branching to Label:-initloop
+CORE 2:-Cycle No:-33 LABEL NAME initloop
+CORE 2:-Cycle No:-34 $t1:3
+CORE 2:-Cycle No:-35 DRAM IS FULL
+CORE 2:-Cycle No:-36 DRAM IS FULL
+CORE 2:-Cycle No:-37 DRAM IS FULL
+CORE 2:-Cycle No:-38 DRAM IS FULL
+CORE 2:-Cycle No:-39 DRAM IS FULL
+CORE 2:-Cycle No:-40 DRAM-Request Issued
+CORE 2:-Cycle No:-40-51 1000-1003:1
+CORE 2:-Cycle No:-41 $s0:1012
+CORE 2:-Cycle No:-42 $s1:3
+CORE 2:-Cycle No:-43 $s3:1
+CORE 2:-Cycle No:-44 Branching to Label:-initloop
+CORE 2:-Cycle No:-45 LABEL NAME initloop
+CORE 2:-Cycle No:-46 $t1:4
+CORE 2:-Cycle No:-47 DRAM IS FULL
+CORE 2:-Cycle No:-48 DRAM IS FULL
+CORE 2:-Cycle No:-49 DRAM IS FULL
+CORE 2:-Cycle No:-50 DRAM IS FULL
+CORE 2:-Cycle No:-51 DRAM IS FULL
+CORE 2:-Cycle No:-52 DRAM-Request Issued
+CORE 1:-Cycle No:-52-65 2500-2503:2
+CORE 2:-Cycle No:-53 $s0:1016
+CORE 2:-Cycle No:-54 $s1:4
+CORE 2:-Cycle No:-55 $s3:1
+CORE 2:-Cycle No:-56 Branching to Label:-initloop
+CORE 2:-Cycle No:-57 LABEL NAME initloop
+CORE 2:-Cycle No:-58 $t1:5
+CORE 2:-Cycle No:-59 DRAM IS FULL
+CORE 2:-Cycle No:-60 DRAM IS FULL
+CORE 2:-Cycle No:-61 DRAM IS FULL
+CORE 2:-Cycle No:-62 DRAM IS FULL
+CORE 2:-Cycle No:-63 DRAM IS FULL
+CORE 2:-Cycle No:-64 DRAM IS FULL
+CORE 2:-Cycle No:-65 DRAM IS FULL
+CORE 2:-Cycle No:-66 DRAM-Request Issued
+CORE 1:-Cycle No:-66-77 1004-1007:3
+CORE 2:-Cycle No:-67 $s0:1020
+CORE 2:-Cycle No:-68 $s1:5
+CORE 2:-Cycle No:-69 $s3:1
+CORE 2:-Cycle No:-70 Branching to Label:-initloop
+CORE 2:-Cycle No:-71 LABEL NAME initloop
+CORE 2:-Cycle No:-72 $t1:6
+CORE 2:-Cycle No:-73 DRAM IS FULL
+CORE 2:-Cycle No:-74 DRAM IS FULL
+CORE 2:-Cycle No:-75 DRAM IS FULL
+CORE 2:-Cycle No:-76 DRAM IS FULL
+CORE 2:-Cycle No:-77 DRAM IS FULL
+CORE 2:-Cycle No:-78 DRAM-Request Issued
+CORE 1:-Cycle No:-78-91 2504-2507:0
+CORE 2:-Cycle No:-79 $s0:1024
+CORE 2:-Cycle No:-80 $s1:6
+CORE 2:-Cycle No:-81 $s3:1
+CORE 2:-Cycle No:-82 Branching to Label:-initloop
+CORE 2:-Cycle No:-83 LABEL NAME initloop
+CORE 2:-Cycle No:-84 $t1:7
+CORE 2:-Cycle No:-85 DRAM IS FULL
+CORE 2:-Cycle No:-86 DRAM IS FULL
+CORE 2:-Cycle No:-87 DRAM IS FULL
+CORE 2:-Cycle No:-88 DRAM IS FULL
+CORE 2:-Cycle No:-89 DRAM IS FULL
+CORE 2:-Cycle No:-90 DRAM IS FULL
+CORE 2:-Cycle No:-91 DRAM IS FULL
+CORE 2:-Cycle No:-92 DRAM-Request Issued
+CORE 2:-Cycle No:-93 $s0:1028
+CORE 2:-Cycle No:-94 $s1:7
+CORE 2:-Cycle No:-95 $s3:1
+CORE 2:-Cycle No:-96 Branching to Label:-initloop
+CORE 2:-Cycle No:-97 LABEL NAME initloop
+CORE 2:-Cycle No:-98 $t1:8
+CORE 2:-Cycle No:-99 DRAM IS FULL
+CORE 2:-Cycle No:-100 DRAM IS FULL
+
+CORE:-1
+add executed 0 times
+addi executed 6 times
+beq executed 0 times
+bne executed 0 times
+j executed 0 times
+lw executed 4 times
+mul executed 0 times
+slt executed 0 times
+sub executed 0 times
+sw executed 4 times
+
+$a0:0 $a1:0 $a2:0 $a3:0 $at:0 $fp:0 $gp:0 $k0:0 $k1:0 $ra:0 $s0:3e8 $s1:9c4 $s2:0 $s3:0 $s4:0 $s5:0 $s6:0 $s7:0 $sp:7fffeffc $t0:1 $t1:2 $t2:3 $t3:4 $t4:0 $t5:1 $t6:2 $t7:3 $t8:0 $t9:0 $v0:0 $v1:0 $zero:0
+
+CORE:-2
+add executed 0 times
+addi executed 1a times
+beq executed 0 times
+bne executed 7 times
+j executed 0 times
+lw executed 0 times
+mul executed 0 times
+slt executed 7 times
+sub executed 0 times
+sw executed 7 times
+
+$a0:0 $a1:0 $a2:0 $a3:0 $at:0 $fp:0 $gp:0 $k0:0 $k1:0 $ra:0 $s0:404 $s1:7 $s2:a $s3:1 $s4:0 $s5:0 $s6:0 $s7:0 $sp:7fffeffc $t0:0 $t1:8 $t2:0 $t3:0 $t4:0 $t5:0 $t6:0 $t7:0 $t8:0 $t9:0 $v0:0 $v1:0 $zero:0
+
+CORE:-3
+add executed 1 times
+addi executed 5 times
+beq executed 1 times
+bne executed 0 times
+j executed 0 times
+lw executed 0 times
+mul executed 0 times
+slt executed 1 times
+sub executed 0 times
+sw executed 0 times
+
+$a0:0 $a1:0 $a2:0 $a3:0 $at:0 $fp:0 $gp:0 $k0:0 $k1:0 $ra:0 $s0:5 $s1:5 $s2:1 $s3:1 $s4:1 $s5:0 $s6:0 $s7:0 $sp:7fffeffc $t0:0 $t1:0 $t2:0 $t3:0 $t4:0 $t5:0 $t6:0 $t7:0 $t8:0 $t9:0 $v0:0 $v1:0 $zero:0
+
+CORE:-4
+add executed 0 times
+addi executed 6 times
+beq executed 0 times
+bne executed 0 times
+j executed 0 times
+lw executed 1 times
+mul executed 0 times
+slt executed 0 times
+sub executed 0 times
+sw executed 0 times
+
+$a0:0 $a1:0 $a2:0 $a3:0 $at:0 $fp:0 $gp:0 $k0:0 $k1:0 $ra:0 $s0:0 $s1:0 $s2:0 $s3:0 $s4:0 $s5:0 $s6:0 $s7:0 $sp:7fffeffc $t0:b40 $t1:12c $t2:0 $t3:0 $t4:0 $t5:0 $t6:0 $t7:0 $t8:0 $t9:0 $v0:0 $v1:0 $zero:0
+
+CORE:-5
+add executed 0 times
+addi executed 0 times
+beq executed 0 times
+bne executed 0 times
+j executed 0 times
+lw executed 1 times
+mul executed 0 times
+slt executed 0 times
+sub executed 0 times
+sw executed 0 times
+
+$a0:0 $a1:0 $a2:0 $a3:0 $at:0 $fp:0 $gp:0 $k0:0 $k1:0 $ra:0 $s0:0 $s1:0 $s2:0 $s3:0 $s4:0 $s5:0 $s6:0 $s7:0 $sp:7fffeffc $t0:0 $t1:0 $t2:0 $t3:0 $t4:0 $t5:0 $t6:0 $t7:0 $t8:0 $t9:0 $v0:0 $v1:0 $zero:0
+
+MEMORY CONTENTS:-
+1000-1003:1
+1004-1007:2
+1008-1011:3
+1012-1015:4
+1016-1019:5
+1020-1023:6
+1024-1027:7
+2500-2503:2
+2504-2507:0
+
+Throughput-Value:- 1.25743

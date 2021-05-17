@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{soul}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+    \LARGE\textbf{{DRAM Request-Manager For Multi-Core Processor}}\\
+    \vspace{5cm}
+   
+   %%
+    \hrule
+     \vspace{1cm}
+    \large{BY}\\
+      \vspace{0.15cm}
+    \Large\textbf{{KURISETI RAVI SRI TEJA - 2019CS10369}}\\
+    \Large\textbf{{GATTU KARTHIK - 2019CS10348}}\\
+      \vspace{1cm}
+    \hrule
+    
+\end{center}
+
+
+\end{titlepage}
+\tableofcontents
+
+\newpage
+\section{Approach Used To Solve}
+\begin{itemize}
+\normalsize{
+\item We assumed that the input commands are stored in a text file with only “.main” part written.(No .data part will be there because there are no commands like syscall and la)
+\item We read the text file as distinct lines and used a built in regex to split it at commas and whitespaces and convert it into a vector of strings.
+\item All empty lines in text were removed.
+\item All such vectors were stored in a 2D vector (vector of vector of strings).
+\item We used maps to store the contents of registers and to store how many times each command was called.
+\item We have implemented in such a way that if all the commands which have encountered in a particular cycle are of non (lw,sw ) commands then they all will be executed at a time on corresponding cores.
+\item If there are any syntactic errors then the execution in that core will be stopped by printing the appropriate message.
+\item If there are any (lw,sw) commands then the corresponding dram request will be raised and this will be pushed into the queue.
+\item The execution of these requests will be done in the order in which they have been raised.
+\item When any lw,sw is executed then in other cores if there aren't any dram requests raised then the commands in other cores will be executed along with this lw,sw command.If any other core has raised any dram request then execution in that core will be halted till the priorly raised dram requests have executed.
+\item After all the execution has been done till the maximum number of cycles given then registers along with their contents will be displayed and the number of times each command is executed will be printed.
+\item For memory we created a 256*1024 int array(1024 bytes in each row) and for counting row-buffers we used a global variable which was passed by reference into the corresponding function which takes 0 or 1 or 2 or 3 depending on the functionality.
+\item We incorporated the delay of MRM assuming that the accessing of memory is done by binary searches with three pointers available that point to the first,middle and the last rows with the delay in cycles of the MRM approximated as the number of binary searches done to find that row.
+\item We assumed that the DRAM is of finite size(size=10) and the execution in that core halts if the lw/sw command cannot be pushed into DRAM.
+}
+
+\end{itemize}
+
+ \vspace{5mm}
+   
+\section{Assumptions}
+\begin{itemize}
+\normalsize{
+\item Every file should end with “exit:” and begin with “main:”.
+\item Assumed there are no comments in the given testcase files.
+\item Took absolute addresses for memory.
+}
+
+\end{itemize}
+
+\section{TestCases}
+ 
+ \begin{itemize}
+\normalsize{
+
+\item We have considered the test files which containing all types of instructions and included them here also.
+\item Tested with files containing syntactic errors.
+}
+\end{itemize}
+
+\section{Instructions to Run}
+\begin{itemize}
+\normalsize{
+\item Move the files related to the testcase to the directory containing the code.
+\item Open the terminal and enter the command \textbf{make all} to execute the code. Then  use the command \textbf{make run} to run the executable.Then input the number of files and then input the file names containing commands  successively and input the maximum number of cycles,value of row-access and col-access delays.
+\item The output will be displayed on the terminal itself.
+\item Use the command \textbf{make clean} to remove all the executables produced.
+}
+
+\end{itemize}
+
+\section{Limitations}
+\begin{itemize}
+\normalsize{
+\item Didn’t reorder instructions due to large waiting time in cycles so in some cases throughput value could be lesser than anticipated.
+}
+
+
+
+ 
+\end{itemize}
+
+
+\end{document}

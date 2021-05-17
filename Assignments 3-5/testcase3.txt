@@ -1,0 +1,9 @@
+main:
+addi $t0, $t0, 960
+addi $t1, $t1, 100
+lw $s1,1000($zero)
+addi $t0, $t0, 960
+addi $t1, $t1, 100
+addi $t0, $t0, 960
+addi $t1, $t1, 100  
+exit:
