@@ -1,8 +1,0 @@
-main:
-addi $t0, $t0, 960
-addi $t1, $t1, 100
-addi $t0, $t0, 960
-addi $t1, $t1, 100
-addi $t0, $t0, 960
-addi $t1, $t1, 100  
-exit:
