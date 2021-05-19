@@ -6,6 +6,7 @@ int main(){
     int Simul;
     int rowaccess;
     int colaccess;
+    int WaitBufferSize;
     cout<<"Please Enter the NUMBER_OF_CORES:";
     cin>>Cores;
     cout<<"Please Enter the Simulation_Cycles:";
@@ -14,6 +15,8 @@ int main(){
     cin>>rowaccess;
     cout<<"Please Enter the COL_ACCESS_DELAY:";
     cin>>colaccess;
+    cout<<"Please Enter the WAIT_BUFFER_SIZE:";
+    cin>>WaitBufferSize;
     vector<Core>Proc;
     int maxcomm=0;
     for(int i=0;i<Cores;i++){
@@ -125,7 +128,7 @@ int main(){
                 
             }
             else if(ty==3){
-                if(DRAM.size()>=10){
+                if(DRAM.size()>=WaitBufferSize){
                     comtot+=1;
                     cout<<"CORE "<<c.corenum<<":-"<<"Cycle No:-"<<cyc<<" "<<"DRAM IS FULL"<<"\n"; 
                     j+=1;
